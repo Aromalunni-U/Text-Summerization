@@ -25,7 +25,7 @@ def summarize():
     text = st.text_area("", height=300,placeholder="Enter your text here and press Ctrl + Enter to generate summary.")
 
     if text:
-        nlp = spacy.load("en_core_web_md")
+        nlp = spacy.load("en_core_web_sm")
         doc = nlp(text)
         total_sentences = len(list(doc.sents))
         num_sentences = st.number_input("Number of sentences in summary", min_value=1, max_value=total_sentences,value=min(3, total_sentences) )
