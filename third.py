@@ -2,6 +2,7 @@ import spacy
 import networkx as nx
 import numpy as np
 import streamlit as st
+from spacy.cli import download
 
 
 
@@ -26,7 +27,13 @@ def summerize():
     text = st.text_area("", height=300,placeholder="Enter your text here and press Ctrl + Enter to generate summary.")
 
     if text:
-        nlp = spacy.load("en_core_web_md")
+
+        try:
+            nlp = spacy.load("en_core_web_md")
+        except OSError:
+            download("en_core_web_md")
+            nlp = spacy.load("en_core_web_md")
+            
         doc = nlp(text)
         sentences = list(doc.sents)
         total_sentences = len(list(doc.sents))
