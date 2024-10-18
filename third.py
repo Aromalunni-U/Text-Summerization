@@ -28,11 +28,8 @@ def summerize():
 
     if text:
 
-        try:
-            nlp = spacy.load("en_core_web_md")
-        except OSError:
-            download("en_core_web_md")
-            nlp = spacy.load("en_core_web_md")
+        
+        nlp = spacy.load("en_core_web_md")
             
         doc = nlp(text)
         sentences = list(doc.sents)
