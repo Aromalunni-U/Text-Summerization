@@ -2,4 +2,3 @@ numpy
 spacy
 networkx
 streamlit-option-menu
-streamlit
