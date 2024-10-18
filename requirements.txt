@@ -3,4 +3,4 @@ spacy==3.8.2
 numpy
 networkx
 streamlit-option-menu
-en-core-web-md
+en-core-web-sm
