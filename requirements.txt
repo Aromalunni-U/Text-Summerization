@@ -1,5 +1,5 @@
 streamlit
-spacy
+spacy==3.8.2
 numpy
 networkx
 streamlit-option-menu
